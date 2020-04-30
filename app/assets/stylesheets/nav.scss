@@ -1,22 +1,24 @@
 .toggle-btn{
    max-height: 2000px
 }
+
 nav{
     color: #fff;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 2em;
-    background-color: #000;
     i{
        margin: 0 0 0 10px;
     }
+    background-color: #000;
 }
+
+
 .nav-text-icon{
     display: flex;
     align-items: center;
 }
-
 
                                               /* Nav left block */
 .nav-left-block{
@@ -32,7 +34,7 @@ nav{
 .nav-main-menu li{
    cursor: context-menu;
    float: left;
-   height: 57px;
+   margin: 20px;
    display: flex;
    align-items: center;
 }
@@ -40,15 +42,7 @@ nav{
    padding: 20px;
 }
 .nav-main-menu li a{
-   padding: 20px;
    color: #fff;
-}
-.nav-main-menu li:hover{
-   background-color: #fff;
-   color: #000;
-}
-.nav-main-menu li:hover a{
-   color: #000;
 }
 
 
@@ -180,8 +174,12 @@ nav{
       padding: 1em 2em;
       max-height: 75px;
       overflow: hidden;
+
+      position: static !important;
+      z-index: unset !important;
+      width: unset !important;
+      background-color: #000 !important;
   }
-  
                                                 /* Nav left block */
   .nav-left-block{
       flex-direction: column;
@@ -196,7 +194,7 @@ nav{
   .nav-main-menu li{
      width: 100%;
      height: auto;
-     padding: 10px 0;
+     margin: 10px 0;
      display: block;
   }
                         //Links
@@ -215,13 +213,6 @@ nav{
      width: 100%;
      margin-right: 1.5em;
      color: #fff;
-  }
-  .nav-main-menu li:hover{
-     background-color: unset;
-     color: unset;
-  }
-  .nav-main-menu li:hover a{
-     color: unset;
   }
   
 

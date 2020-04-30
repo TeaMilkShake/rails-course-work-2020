@@ -1,4 +1,4 @@
-<nav>
+<nav class="landing-nav">
         <!--Nav left side-->
         <div class="nav-left-block">
             <div class="logo"><h1>Lavi<h1>  <div class="burger-btn" data-clicked="false"><span></span></div></div> 
@@ -15,7 +15,7 @@
         <div class="nav-right-block">
             <div class="nav-logged-in-wrapper">
                 <a href="/profile" class="session-name"><%= @session_client.name %></a> 
-                <%= link_to raw("<p>Вихід<i class='fas fa-sign-in-alt log-out-icon'></i></p> "), logOut_path, 'data-turbolinks' => false %>
+                <%= link_to raw("<div class='text-icon-block'><p>Вихід</p><i class='fas fa-sign-in-alt log-out-icon'></i></div> "), logOut_path, 'data-turbolinks' => false %>
             </div>
            
         </div>

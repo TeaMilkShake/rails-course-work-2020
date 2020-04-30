@@ -71,6 +71,16 @@ $ThemeColor3: #13151F;
     color: rgb(53, 145, 175);
  }
 
+.text-icon-block{
+    display: flex;
+    align-items: center;
+    i,p{
+        display: block;
+    }
+    i{
+        margin-top: 2px;
+    }
+}
 .form-btn{
     display: block;
     transition: background-color 0.2s ease-in-out;
