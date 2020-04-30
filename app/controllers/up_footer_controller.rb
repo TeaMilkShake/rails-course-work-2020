@@ -1,0 +1,2 @@
+class UpFooterController < ApplicationController
+end

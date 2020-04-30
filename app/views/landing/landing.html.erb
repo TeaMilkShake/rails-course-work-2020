@@ -1,0 +1,65 @@
+<div class="landing">
+    <div class="darken"></div>
+
+    <div class="landing-img"></div>
+    <%= image_tag  "landing.svg", :class => "landing-svg" %>
+    <div class="landing-texts">
+        <h1>Надійна продажа та купівля нерухомості</h1>
+        <p>Понад <%= @suggestions.length%> активних пропозицій від наших клієнтів</p>
+    </div>
+</div>
+
+<div class="suggestions container">
+    <h1 class="title">Нові об'єкти</h1>
+    
+    <div id='Suggestions-wrapper' class='owl-carousel owl-theme'>
+        <% for i in 0...6 %>
+            <%if i < @suggestions.length%>
+                <div class="suggestions-item">
+                    <%= link_to raw("#{image_tag  @suggestions[i].image1}"), @suggestions[i]%>
+                    <p>Категорія: <span class="object-data-span"><%= @suggestions[i].category%></span></p>
+                    <p>Тип: <span class="object-data-span"><%= @suggestions[i].flat_type%></span></p>
+                    <p>Ціна: <span class="object-data-span"><%= @suggestions[i].price%></span></p>
+                    <p>Площа:  <span class="object-data-span"><%= @suggestions[i].square%></span></p>
+                    <p>Місто:  <span class="object-data-span"><%= @suggestions[i].city%></span></p>
+                    <p>Вулиця: <span class="object-data-span"><%= @suggestions[i].address%></span></p>
+                </div>
+            <%else%>
+                <div class="suggestions-item">
+                    <div class='empty-image'></div>
+                    <p>Категорія: <span class='empty-text'></span></p>
+                    <p>Тип: <span class='empty-text'></span></p>
+                    <p>Ціна: <span class='empty-text'></span></p>
+                    <p>Площа: <span class='empty-text'></span></p>
+                    <p>Місто: <span class='empty-text'></span></p>
+                    <p>Вулиця: <span class='empty-text'></span></p>
+                </div>          
+            <%end%>
+        <%end%>
+    </div>
+</div>
+
+
+<div class="landing-about">
+    <div class="landing-about-mini-block-wrapper">
+        <div class="landing-about-mini-block">
+            <div class="title-text">
+                <h2>Lavi - просто та швидко</h2>
+                <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, 
+                consectetur, adipisci velit, 
+                sed quia non numquam eius modi tempora incidunt ut labore et 
+                dolore magnam aliquam quaerat voluptatem.</p>
+            </div>
+
+            <p class="landing-about-conclution">Створіть обліковий запис та виставляйте свої пропозиції</p>
+        </div>
+    </div>
+    <%= image_tag  "landing-about/footer.jpg", :class => "landing-about-mobile-img"%>
+    <%= image_tag  "landing-about/flat1.jpg", :class => "landing-about-mobile-img"%>
+    <%= image_tag  "landing-about/house2.jpg", :class => "landing-about-mobile-img"%>
+    <%= image_tag  "landing-about/flat2.jpg"%>
+    <%= image_tag  "landing-about/corridor1.jpg", :class => "landing-about-mobile-img"%>
+    <%= image_tag  "landing-about/house3.jpg", :class => "landing-about-mobile-img"%>
+</div>
+
+<%= render "up_footer/up_footer.html.erb"%>

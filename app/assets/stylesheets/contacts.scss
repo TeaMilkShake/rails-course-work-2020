@@ -1,0 +1,44 @@
+$ThemeColor1: #1C2341;
+$ThemeColor2: #56CCF2;
+$ThemeColor3: #13151F;
+
+.contacts-wrapper{
+    display: flex;
+    height: 400px;
+}
+@mixin contact-dark-blue-block {
+    flex: 1;
+    background-color: $ThemeColor1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+//First block
+.actual-contacts-wrapper{
+    @include contact-dark-blue-block;
+    li{
+        font-size: 14px;
+        margin: 15px 0;
+    }
+    a{
+        color: #fff;
+        font-size: 18px;
+        margin-right: 15px;
+    }
+}
+
+
+//Second block
+.google-map{
+    display: block;
+    flex: 1;
+}
+
+
+@media screen and(max-width: 1024px){
+    .contacts-wrapper{
+        height: 550px;
+        flex-direction: column;
+    }
+}

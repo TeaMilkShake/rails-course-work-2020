@@ -1,0 +1,142 @@
+<div class="global-title">
+    <div class="global-darken"></div>
+    <div class="global-img"></div>
+    <h1>Нова пропозиція</h1>
+</div>
+<div class="container">
+    <%= form_for :suggestion , url:newPost_path, html:{id: 'new-post-form'} do |f| %>
+
+        
+        <div class="post-text-info">
+            <div class="post-description">
+                <h2>Опис</h2>
+                <%= f.text_area :description, options ={ placeholder: "Ваш опис" } %>
+            </div>
+
+            <div class="post-marks">
+                <h2>Мітки</h2>
+                <div class="post-text-info-grid">
+
+                    <div class="form-input-wrapper">
+                        <i class="fas fa-dollar-sign form-input-icon"></i>
+                        <p class="input-label">Ціна (повна / місяць)</p>
+                        <%= f.text_field :price, class: 'form-input price-input'%>
+                    </div>
+                    <div class="form-input-wrapper">
+                    <span class="form-input-icon">м²</span>
+                        <p class="input-label">Площа</p>
+                        <%= f.text_field :square, class: 'form-input square-input'%>
+                    </div>
+
+
+                    <div class="form-input-wrapper">
+                        <p class="input-label">Адреса</p>
+                        <%= f.text_field :address, class: 'form-input address-input'%>
+                    </div>
+
+                    <div class="form-input-wrapper">
+                        <p class="input-label">Місто</p>
+                        <%= f.text_field :city, class: 'form-input city-input'%>
+                    </div>
+
+                    <div class="checkboxes-wrapper">
+                        <div class="checkbox-wrapper">
+                            <label class="checkbox-label">Оренда
+                                <%= check_box_tag "suggestion[category][]",  "Оренда" ,false, options = {class: 'rent-input checkbox-input category-input'}%>
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="checkbox-wrapper">
+                            <label class="checkbox-label">Продаж
+                                <%= check_box_tag "suggestion[category][]" , "Продаж" ,false, options = {class: 'sell-input checkbox-input category-input'}%>
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h1 class="category-title" style="margin-top: 35px">Категорія</h1>
+                    <div class="type-wrapper">
+                        <div class="checkbox-wrapper">
+                            <label class="checkbox-label">Квартира
+                                <%= check_box_tag "suggestion[flat_type][]",  "Квартира" ,false, options = {class: 'rent-input checkbox-input type-input'}%>
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="checkbox-wrapper">
+                            <label class="checkbox-label">Будинок
+                                <%= check_box_tag "suggestion[flat_type][]",  "Будинок" ,false, options = {class: 'sell-input checkbox-input type-input'}%>
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="checkbox-wrapper">
+                            <label class="checkbox-label">Земельна ділянка
+                                <%= check_box_tag "suggestion[flat_type][]",  "Земельна ділянка" ,false, options = {class: 'sell-input checkbox-input type-input'}%>
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="checkbox-wrapper">
+                            <label class="checkbox-label">Комерційна нерухомість
+                                <%= check_box_tag "suggestion[flat_type][]",  "Комерційна нерухомість" ,false, options = {class: 'sell-input checkbox-input type-input'}%>
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </div>        
+
+        <h1 class="post-photo-title">Фото</h1>
+        <div class="post-files-upload">
+            <div class="post-file">
+                <%= image_tag("" , :class => "post-image-1")%>
+                <div class="post-file-new-darken">
+                    <h2>Нове фото</h2>
+                    <i class="fas fa-image"></i>
+                </div>
+
+                <div class="post-image-add-text">
+                    <h2>Додати фото</h2>
+                    <i class="fas fa-image"></i>
+                </div>
+
+                <label for="suggestion_image1"></label>
+
+                <%= f.file_field :image1, class: "post-image-input-1"%>
+            </div>
+            <div class="post-file">
+                <%= image_tag("" , :class => "post-image-2")%>
+                <div class="post-file-new-darken">
+                    <h2>Нове фото</h2>
+                    <i class="fas fa-image"></i>
+                </div>
+
+                <div class="post-image-add-text">
+                    <h2>Додати фото</h2>
+                    <i class="fas fa-image"></i>
+                </div>
+
+                <label for="suggestion_image2"></label>
+
+                <%= f.file_field :image2%>
+            </div>
+            <div class="post-file">
+                <%= image_tag("" , :class => "post-image-3")%>
+                <div class="post-file-new-darken">
+                    <h2>Нове фото</h2>
+                    <i class="fas fa-image"></i>
+                </div>
+
+               <div class="post-image-add-text">
+                    <h2>Додати фото</h2>
+                    <i class="fas fa-image"></i>
+                </div>
+
+                <label for="suggestion_image3"></label>
+
+                <%= f.file_field :image3%>
+            </div>
+        </div>
+
+        <%= f.submit  "Підтвердити", :class => 'form-btn post-btn' %>
+    <% end %>
+</div>

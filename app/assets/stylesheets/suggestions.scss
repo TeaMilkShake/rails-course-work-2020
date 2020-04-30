@@ -1,0 +1,141 @@
+.object-text-info-wrapper{
+    display: flex;
+    .object-data{
+        width: 70%;
+    }
+    .object-actions{
+        width: 30%;
+        text-align: right;
+        a{
+            display: block;
+            width: fit-content;
+            margin-left: auto;
+        }
+        .suggestion-delete-btn{
+            cursor: pointer;
+            background-color: rgb(187, 20, 20);
+            border-radius: 4px;
+            width: fit-content;
+            margin-left: auto;
+            padding: 5px 7px;
+            color: #fff;
+            margin-top: 10px;
+        }
+    }
+}
+.object-small-block-wrapper{
+    margin: 60px 0;
+    display: flex;
+    .object-small-block{
+        h1,p{
+            margin-bottom: 10px;
+        }
+        i{
+            margin-right: 5px;
+        }
+    }
+    .object-small-block:first-of-type{
+        padding-right: 80px;
+    }
+}
+.desctiption-title{
+    margin: 20px 0;
+}
+.actions-title{
+    margin: 20px 0 15px 0;
+}
+
+
+//Carousel
+
+#suggestion-carousel{
+    img{
+        height: 400px;
+    }
+}
+
+
+.absolute-suggestion-logo{
+    display: none;
+}
+
+
+
+@media screen and (max-width: 900px){
+    .object-text-info-wrapper{
+        flex-direction: column;
+        .object-data{
+            width: 100%;
+            order: 2;
+        }
+        .object-actions{
+            order: 1;
+            width: 100%;
+        }
+    }
+    .object-small-block-wrapper{
+        justify-content: space-between;
+        .object-small-block:first-of-type{
+            padding-right: 0;
+        }
+    }  
+
+    //Absolute logo
+    .object-actions{
+        position: relative;
+    }
+    .absolute-suggestion-logo{
+        position: absolute;
+        display: flex;
+        align-items: center;
+        top: 50%;
+        left: 0;
+        transform: translate(0, -50%);
+        h1{
+            font-size: 32px;
+            margin-right: 3px;
+        }
+    }
+    .suggestion-logo-lines{
+        height: 27px;
+        width: 27px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .suggestion-logo-line{
+            width: 100%;
+            background-color: #000;
+            height: 4px;
+            margin: 2px 0;
+        }
+    }
+    .suggestion-logo-lines:last-of-type{
+        transform: rotate(90deg);
+        margin-left: 2px;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .object-text-info-wrapper{
+        .object-actions{
+            text-align: left;
+            margin: 15px 0;
+            a{
+                margin-left: unset;
+            }
+            .suggestion-delete-btn{
+                margin-left: unset;
+            }
+        }
+    }
+    .object-small-block-wrapper{
+        flex-direction: column;
+        .object-small-block:first-of-type{
+            margin-bottom: 40px;
+        }
+    }  
+
+    .absolute-suggestion-logo{
+        display: none;
+    }
+}

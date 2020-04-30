@@ -1,0 +1,95 @@
+@mixin gradient {
+    background-image: linear-gradient(to right, rgb(2, 98, 129), rgb(21, 60, 73));
+}
+
+.profile-wrapper{
+    .client-name{
+        margin-top: 50px;
+    }
+    p{
+        margin: 20px 0;
+    }
+    p,a{
+        font-size: 14px;
+    }
+    .add-suggestion-btn{
+        position: relative;
+        z-index: 1;
+        @include gradient();
+        overflow: hidden;
+        &::before{
+            content: '';
+            border-radius: 60px;
+            position: absolute;
+            top: 0;
+            right: -100%;
+            bottom: 0;
+            left: 0;
+            background-image: linear-gradient(to right, rgb(21, 60, 73) , rgb(2, 98, 129), rgb(2, 98, 129));
+            transition: right 0.2s ease-in-out;
+            z-index: -1;
+        }
+        &:hover{
+            &::before{
+                right: 0;
+            }
+        } 
+    }
+    hr{
+        margin: 50px 0;
+    }
+}
+
+.suggestions-title{
+    margin-bottom: 30px;
+}
+
+.suggestions-wrapper{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0 40px;
+    .suggestion-item{
+        margin: 0;
+        margin-bottom: 30px;
+        p{
+            margin: 10px 0;
+        }
+        &:hover{
+            .empty-image-darken{
+                opacity: 0.5;
+            }
+            h1{
+                opacity:1;
+            }
+            .empty-text{
+                &:before{
+                    opacity: 0.5;
+                }
+            }
+        }
+    }    
+}
+
+
+@media screen and(max-width: 768px){
+    
+.suggestions-wrapper{
+    grid-template-columns: repeat(2, 1fr);
+}
+
+}
+
+@media screen and(max-width: 425px){
+.client-info-wrapper{
+    text-align: center;
+}
+.profile-wrapper{
+    a{
+        margin: 0 auto;
+    }
+}
+.suggestions-wrapper{
+    grid-template-columns: 1fr;
+}
+
+}

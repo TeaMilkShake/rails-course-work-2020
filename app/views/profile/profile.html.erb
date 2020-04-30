@@ -1,0 +1,52 @@
+<div class="global-title">
+    <div class="global-darken"></div>
+    <div class="global-img"></div>
+    <h1>Домашня сторінка</h1>
+</div>
+
+<div class="container profile-wrapper">
+    <div class="client-info-wrapper">
+        <h1 class="client-name"><%= @session_client.name%></h1>
+        <p><i class="fas fa-phone"></i> <%= @session_client.number%></p>
+        <p><i class="fas fa-envelope"></i> <%= @session_client.email%></p>
+        <a class="form-btn add-suggestion-btn" href="/new">Додати пропозицію</a>
+    </div>
+    <hr>
+
+    <h1 class="suggestions-title">Ваші пропозиції</h1>
+
+    <div class="suggestions-wrapper">
+    <% if @suggestions.empty?%>
+        <%= link_to raw("
+            <div class='empty-image'>
+                <div class='empty-image-darken'></div>
+                <h1>Додати першу пропозицію</h1>
+            </div>
+            <p>Категорія: <span class='empty-text'></span></p>
+            <p>Тип: <span class='empty-text'></span></p>
+            <p>Ціна: <span class='empty-text'></span></p>
+            <p>Площа: <span class='empty-text'></span></p>
+            <p>Місто: <span class='empty-text'></span></p>
+            <p>Вулиця: <span class='empty-text'></span></p>
+        ") , new_path ,class: "suggestion-item"%>
+    <%else%>
+        <% @suggestions.each do |suggestion| %>
+        <div class="suggestion-item">
+            <%= link_to raw("
+            
+                #{image_tag(suggestion.image1) if suggestion.image1.attached?}
+                <div class='empty-image-darken'></div>
+                <h1>Переглянути</h1>
+
+            "), suggestion ,class: "empty-image"%>
+            <p>Категорія: <span class="object-data-span"><%= suggestion.category%></span></p>
+            <p>Тип: <span class="object-data-span"><%= suggestion.flat_type%></span></p>
+            <p>Ціна: <span class="object-data-span"><%= suggestion.price%></span></p>
+            <p>Площа:  <span class="object-data-span"><%= suggestion.square%></span></p>
+            <p>Місто:  <span class="object-data-span"><%= suggestion.city%></span></p>
+            <p>Вулиця: <span class="object-data-span"><%= suggestion.address%></span></p>
+        </div>
+        <%end%>
+    <%end%>
+    </div>
+</div>

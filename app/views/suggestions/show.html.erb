@@ -1,0 +1,91 @@
+<!--Warning-->
+      <div class="warning-wrapper">
+          <div class="warning-relative">
+              <div class="warning-darken"></div>
+              <div class="warning-card">
+                <h1>Ця дія безповоротна</h1>
+                <div class="warning-buttons">
+                  <p class="warning-back no-select-btn">Повернутися</p>
+                  <%= link_to 'Видалити', suggestion_path(@suggestion), method: :delete, :class => "suggestion-delete-btn"%>
+                </div>
+              </div>
+          </div>
+      </div>
+
+
+<div class="global-title">
+    <div class="global-darken"></div>
+    <div class="global-img"></div>
+    <h1>Об'єкт</h1>
+</div>
+
+<div class="container">
+  <div class="object-text-info-wrapper">
+
+    <div class="object-data">
+        <h1 class="desctiption-title">Опис</h1>
+        <p class="desctiption-text"><%= @suggestion.description %></p>
+        <p style="margin-top: 10px">Адреса: <span class="object-data-span"><%= @suggestion.address %></span></p>
+    </div>
+
+
+
+
+    <div class="object-actions">
+
+        <!--Absolute logo-->
+        <div class="absolute-suggestion-logo">
+            <h1>Lavi</h1>
+
+            <div class="suggestion-logo-lines">
+              <div class="suggestion-logo-line"></div>
+              <div class="suggestion-logo-line"></div>
+              <div class="suggestion-logo-line"></div>
+            </div>
+
+            <div class="suggestion-logo-lines">
+              <div class="suggestion-logo-line"></div>
+              <div class="suggestion-logo-line"></div>
+              <div class="suggestion-logo-line"></div>
+            </div>
+        </div>
+
+        <% if session[:user_id] && session[:user_id] == @suggestion.owner.to_i%>
+
+        <h1 class="actions-title">Додаткові дії</h1>
+        <%= link_to "Редагувати"%>
+        <p class="suggestion-delete-btn">Видалити</p>
+
+        <%end%>
+    </div>
+  </div>
+
+  <div class="object-small-block-wrapper">
+            <div class="object-small-block">
+                <h1 class="contacts-title">Контакти</h1>
+                <p><i class="fas fa-envelope"></i><%= @suggestion_owner.email %></p>
+                <p><i class="fas fa-phone"></i><%= @suggestion_owner.number %></p>
+                <p><i class="fas fa-user-tie"></i><%= @suggestion_owner.name %></p>
+            </div>
+
+            <div class="object-small-block">
+                <h1 class="tags-title">Мітки</h1>
+                <p>Категорія: <span class="object-data-span"><%= @suggestion.category %></span></p>
+                <p>Тип: <span class="object-data-span"><%= @suggestion.flat_type %></span></p>
+                <p>Ціна: <span class="object-data-span"><%= @suggestion.price %></span></p>
+                <p>Площа: <span class="object-data-span"><%= @suggestion.square %></span></p>
+                <p>Місто: <span class="object-data-span"><%= @suggestion.city %></span></p>
+            </div>
+  </div>
+
+  <div id="suggestion-carousel" class="owl-theme owl-carousel">
+      <%= image_tag(@suggestion.image1) if @suggestion.image1.attached?%>
+      <%= image_tag(@suggestion.image2) if @suggestion.image2.attached?%>
+      <%= image_tag(@suggestion.image3) if @suggestion.image3.attached?%>
+  </div>
+
+</div>
+
+
+<%= render "up_footer/up_footer.html.erb"%>
+

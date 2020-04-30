@@ -1,0 +1,24 @@
+.up-footer{
+    padding: 100px 0 70px 0;
+    text-align: center;
+    p{
+        margin: 20px 220px;
+    }
+}
+
+
+@media screen and (max-width: 1000px){
+    .up-footer{
+        p{
+            margin: 20px 100px;
+        }
+    }
+}
+
+@media screen and (max-width: 768px){
+    .up-footer{
+        p{
+            margin: 20px 0;
+        }
+    }
+}

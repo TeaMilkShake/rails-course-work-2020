@@ -1,0 +1,35 @@
+<div class="global-title">
+    <div class="global-darken"></div>
+    <div class="global-img"></div>
+    <h1>Реєстрація</h1>
+</div>
+
+<div class="container form-wrapper">
+
+    <h1>Сторінка реєстрації</h1>
+
+    <%= form_for :human , url:registerSubmit_path, html:{id: 'register-form'} do |f| %>
+        <div class="form-input-wrapper">
+            <p class="input-label">П. І. Б.</p>
+            <%= f.text_field(:name, {:class => 'form-input', :placeholder => "Яновський Нікіта Юрійович"}) %>
+        </div>
+        <div class="form-input-wrapper">
+            <p class="input-label">Пошта</p>
+            <%= f.email_field(:email, {:class => 'form-input', :placeholder => "nik.yanovskyy@gmail.com"}) %>
+        </div>
+        <div class="form-input-wrapper">
+            <p class="input-label">Номер телефона</p>
+            <%= f.number_field(:number, {:class => 'form-input phone-number-input'}) %>
+        </div>
+    <div class="form-input-wrapper">
+            <p class="input-label">Пароль</p>
+            <%= f.password_field(:password, {:class => 'form-input', :id => 'password-confirm'}) %>
+        </div>
+        <div class="form-input-wrapper">
+            <p class="input-label">Підтвердження пароля</p>
+            <%= f.password_field(:password_confirmation, {:class => 'form-input register-last-input'}) %>
+        </div>
+        <%= f.submit  "Підтвердити", :class => 'form-btn register-btn' %>
+    <%end%>
+
+</div>

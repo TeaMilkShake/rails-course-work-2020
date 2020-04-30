@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ValidationTest</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "owl.carousel.min" %>
+    <%= stylesheet_link_tag "owl.theme.default.min" %>
+  </head>
+
+  <body>
+
+      <!--Menu rendering-->
+      <% if session[:user_id] %>
+        <%= render "nav/navLogged.html.erb" %>
+      <% else %>
+        <%= render "nav/nav.html.erb" %>
+      <%end%>
+
+      <%= yield %>
+
+      <!--Footer-->
+      <%= render "footer/footer.html.erb"%>
+  </body>
+</html>

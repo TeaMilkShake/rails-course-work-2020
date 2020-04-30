@@ -1,0 +1,36 @@
+<div class="global-title">
+    <div class="global-darken"></div>
+    <div class="global-img"></div>
+    <h1>Вхід</h1>
+</div>
+<div class="container form-wrapper">
+    <div class="form-title-and-error">
+        <h1>Вхід до вашої<br> домашньої сторінки</h1>
+        <% if !flash.empty? %>
+                <div id="flash"> 
+                    <% flash.each do |name,msg| %> 
+                        <p class="login-error">
+                            <%= msg %>
+                        </p>  
+                    <% end %>   
+                </div>
+        <% end %>
+    </div>
+
+
+    <!---------------------------------------------------------------------------------------------Form-->
+
+    <%= form_for :humanLogin , url:loginSubmit_path, html:{id: 'login-form'} do |f| %>
+
+        <div class="form-input-wrapper">
+            <p class="input-label">Номер телефона</p>
+            <%= f.number_field :number, class: 'form-input phone-number-input'%>
+        </div>
+        <div class="form-input-wrapper">
+            <p class="input-label">Пароль</p>
+            <%= f.password_field(:password, {:class => 'form-input login-password', :id => 'password-confirm'}) %>
+            
+        </div>
+        <%= f.submit  "Увійти", :class => 'form-btn login-btn' %>
+    <%end%>
+</div>
