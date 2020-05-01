@@ -40,13 +40,13 @@
                     <div class="checkboxes-wrapper">
                         <div class="checkbox-wrapper">
                             <label class="checkbox-label">Оренда
-                                <%= check_box_tag "suggestion[category][]",  "Оренда" ,false, options = {class: 'rent-input checkbox-input category-input', checked: 'checked'}%>
+                                <%= check_box_tag "suggestion[category][]",  "Оренда" ,false, options = {class: 'rent-input checkbox-input category-input', checked: @suggestion.category == "Оренда"}%>
                                 <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="checkbox-wrapper">
                             <label class="checkbox-label">Продаж
-                                <%= check_box_tag "suggestion[category][]" , "Продаж" ,false, options = {class: 'sell-input checkbox-input category-input'}%>
+                                <%= check_box_tag "suggestion[category][]" , "Продаж" ,false, options = {class: 'sell-input checkbox-input category-input', checked: @suggestion.category == "Продаж"}%>
                                 <span class="checkmark"></span>
                             </label>
                         </div>
@@ -59,25 +59,25 @@
                     <div class="type-wrapper">
                         <div class="checkbox-wrapper">
                             <label class="checkbox-label">Квартира
-                                <%= check_box_tag "suggestion[flat_type][]",  "Квартира" ,false, options = {class: 'rent-input checkbox-input type-input'}%>
+                                <%= check_box_tag "suggestion[flat_type][]",  "Квартира" ,false, options = {class: 'rent-input checkbox-input type-input', checked: @suggestion.flat_type == "Квартира"}%>
                                 <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="checkbox-wrapper">
                             <label class="checkbox-label">Будинок
-                                <%= check_box_tag "suggestion[flat_type][]",  "Будинок" ,false, options = {class: 'sell-input checkbox-input type-input'}%>
+                                <%= check_box_tag "suggestion[flat_type][]",  "Будинок" ,false, options = {class: 'sell-input checkbox-input type-input', checked: @suggestion.flat_type == "Будинок"}%>
                                 <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="checkbox-wrapper">
                             <label class="checkbox-label">Земельна ділянка
-                                <%= check_box_tag "suggestion[flat_type][]",  "Земельна ділянка" ,false, options = {class: 'sell-input checkbox-input type-input'}%>
+                                <%= check_box_tag "suggestion[flat_type][]",  "Земельна ділянка" ,false, options = {class: 'sell-input checkbox-input type-input', checked: @suggestion.flat_type == "Земельна ділянка"}%>
                                 <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="checkbox-wrapper">
                             <label class="checkbox-label">Комерційна нерухомість
-                                <%= check_box_tag "suggestion[flat_type][]",  "Комерційна нерухомість" ,false, options = {class: 'sell-input checkbox-input type-input'}%>
+                                <%= check_box_tag "suggestion[flat_type][]",  "Комерційна нерухомість" ,false, options = {class: 'sell-input checkbox-input type-input', checked: @suggestion.flat_type == "Комерційна нерухомість"}%>
                                 <span class="checkmark"></span>
                             </label>
                         </div>
