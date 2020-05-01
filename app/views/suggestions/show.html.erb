@@ -53,7 +53,7 @@
         <% if session[:user_id] && session[:user_id] == @suggestion.owner.to_i%>
 
         <h1 class="actions-title">Додаткові дії</h1>
-        <%= link_to "Редагувати"%>
+        <%= link_to "Редагувати", edit_suggestion_path(@suggestion)%>
         <p class="suggestion-delete-btn">Видалити</p>
 
         <%end%>

@@ -37,13 +37,23 @@ class SuggestionsController < ApplicationController
       end
   end
 
+
+  #Edit suggestion methods
+  def edit
+    if session[:user_id]
+      @session_client = Human.find(session[:user_id]) 
+    end
+  end
+  
   def update
+    @suggestion = Suggestion.find(params[:id])
+
       if @suggestion.update(suggestion_params)
-      
+          redirect_to "/show"
       end
   end
 
-
+  #Delete suggestion
   def destroy
     @suggestion = Suggestion.find(params[:id])
     @suggestion.destroy

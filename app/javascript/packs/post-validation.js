@@ -165,7 +165,7 @@ document.addEventListener("turbolinks:load", function() {
             "suggestion[image1]": {
                 required: "Мінімум 1 зображеня"
             },
-            "description": {
+            "suggestion[description]": {
                 required: "Це поле обов'язкове",
                 maxlength: "В межах 500 символів",
             },
