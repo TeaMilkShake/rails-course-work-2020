@@ -49,9 +49,6 @@ class SuggestionsController < ApplicationController
     @rent_checkbox_hash = checkboxes.at_css('.rent-input')
     @sell_checkbox_hash = checkboxes.at_css('.sell-input')
 
-
-
-
     if session[:user_id]
       @session_client = Human.find(session[:user_id]) 
     end
@@ -61,7 +58,7 @@ class SuggestionsController < ApplicationController
     @suggestion = Suggestion.find(params[:id])
 
       if @suggestion.update(suggestion_params)
-          redirect_to "/show"
+          redirect_to @suggestion
       end
   end
 

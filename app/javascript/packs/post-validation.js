@@ -130,7 +130,9 @@ document.addEventListener("turbolinks:load", function() {
     $('#new-post-form').validate({
         rules: {
             "suggestion[image1]":{
-                required: true,
+                required: function(element){
+                    return $(element).parent().hasClass('edit-image') != true
+                }
             },
             "suggestion[description]": {
                 required: true,
