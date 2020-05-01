@@ -6,7 +6,7 @@ $ThemeColor2: #56CCF2;
 $ThemeColor3: #13151F;
 
 .landing{
-    height: 60vh;
+    height: 80vh;
     overflow: hidden;
     position: relative;
     display: flex;
@@ -31,15 +31,9 @@ $ThemeColor3: #13151F;
         height: 100%;
         width: 100%;
     }
-    .landing-svg{
-        position: absolute;      
-        z-index: 4;
-        width: 105%;
-        bottom: -5px;
-    }
     .landing-texts{
         position: relative;
-        margin: 0 5vmin 120px 5vmin;
+        margin: 0 5vmin 0 5vmin;
         z-index: 3;
         color: #fff;
         p{
@@ -49,7 +43,9 @@ $ThemeColor3: #13151F;
 }
 
 
-
+.suggestions h1{
+    margin-top: 50px;
+}
 //Carousel
 
 #Suggestions-wrapper{
@@ -106,9 +102,6 @@ $ThemeColor3: #13151F;
 
 
 @media screen and(max-width: 425px){
-    .suggestions{
-        margin: 0 !important;
-    }
     #Suggestions-wrapper{
         .suggestions-item{
             width: 80%;
@@ -144,8 +137,5 @@ $ThemeColor3: #13151F;
         .landing-texts{
             margin: 70px 5vmin 120px 5vmin;
         }
-    }
-    .suggestions{
-        margin-top: 20px;
     }
 }

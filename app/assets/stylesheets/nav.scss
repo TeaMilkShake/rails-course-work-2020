@@ -32,11 +32,24 @@ nav{
     margin-right: 2em;
 }
 .nav-main-menu li{
+   position: relative;
    cursor: context-menu;
    float: left;
-   margin: 20px;
+   padding: 20px;
    display: flex;
    align-items: center;
+   .nav-item-line{
+      transition: max-height 0.1s ease-in;
+      position: absolute;
+      top: 0;
+      width: calc(100% - 40px);
+      max-height: 0;
+      height: 4px;
+      background-color: #fff;
+   }
+   a:hover ~ .nav-item-line{
+         max-height: 4px;
+      }
 }
 .nav-main-menu .nav-not-link{
    padding: 20px;
@@ -192,10 +205,15 @@ nav{
   }
                         //Links
   .nav-main-menu li{
+     position: relative;
      width: 100%;
      height: auto;
      margin: 10px 0;
      display: block;
+     padding: 0;
+     .nav-item-line{
+        display: none;
+     }
   }
                         //Links
   .nav-right-block a{
@@ -221,13 +239,11 @@ nav{
                                                 /* Nav right block */
   .nav-right-block{
      flex-direction: column;    
-     margin-top: 20px;                                           
-  }                                         
+     margin-top: 20px;                                      
+  }                                
   .log-in{
      margin-left: 0;
   }
-  
-  
 }
 
 
