@@ -3,8 +3,6 @@ Rails.application.routes.draw do
   root 'landing#landing'
 
 
-  #Error 404
-
   get 'register' => "register#register"
 
   get 'login' => "login#login"
@@ -19,7 +17,7 @@ Rails.application.routes.draw do
 
   get 'new' => "suggestions#new"
 
-
+  get 'search' => "search#search"
 
   #Register
 
@@ -43,6 +41,10 @@ Rails.application.routes.draw do
 
   post 'newPost' => 'suggestions#create'
 
+  #Search posts
 
+  post 'searchPost' => 'search#searchPost'
+
+  post 'remotePrice' => 'suggestions#searchPost'
   resources :suggestions
 end

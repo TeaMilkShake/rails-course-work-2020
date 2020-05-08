@@ -16,6 +16,8 @@ require("packs/register-validation")
 require("packs/login-validation")
 require("packs/post-validation")
 
+//Remote search
+require("packs/search-remote")
 
 //Menu stuff
 require("packs/nav-javascript")
