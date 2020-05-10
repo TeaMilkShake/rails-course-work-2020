@@ -45,7 +45,6 @@ class SuggestionsController < ApplicationController
     <input type="checkbox" name="suggestion[category][]" id="suggestion_category_" value="Оренда" class="rent-input checkbox-input category-input">
     <input type="checkbox" name="suggestion[category][]" id="suggestion_category_" value="Продаж" class="sell-input checkbox-input category-input">
     end
-
     @rent_checkbox_hash = checkboxes.at_css('.rent-input')
     @sell_checkbox_hash = checkboxes.at_css('.sell-input')
 

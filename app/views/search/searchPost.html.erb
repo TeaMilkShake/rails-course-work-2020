@@ -72,3 +72,36 @@
         <div class="search-image-gray-block"></div>
     </div>
 </div>
+
+
+   <div class="container suggestions-wrapper">
+    <% if @suggestions.empty?%>
+        <div class="suggestion-item">
+            <div class='empty-image'></div>
+            <p>Категорія: <span class='empty-text'></span></p>
+            <p>Тип: <span class='empty-text'></span></p>
+            <p>Ціна: <span class='empty-text'></span></p>
+            <p>Площа: <span class='empty-text'></span></p>
+            <p>Місто: <span class='empty-text'></span></p>
+            <p>Вулиця: <span class='empty-text'></span></p>
+        </div>
+    <%else%>
+        <% @suggestions.each do |suggestion| %>
+            <div class="suggestion-item">
+                <%= link_to raw("
+                
+                    #{image_tag(suggestion.image1) if suggestion.image1.attached?}
+                    <div class='empty-image-darken'></div>
+                    <h1>Переглянути</h1>
+
+                "), suggestion ,class: "empty-image"%>
+                <p>Категорія: <span class="object-data-span"><%= suggestion.category%></span></p>
+                <p>Тип: <span class="object-data-span"><%= suggestion.flat_type%></span></p>
+                <p>Ціна: <span class="object-data-span"><%= suggestion.price%></span></p>
+                <p>Площа:  <span class="object-data-span"><%= suggestion.square%></span></p>
+                <p>Місто:  <span class="object-data-span"><%= suggestion.city%></span></p>
+                <p>Вулиця: <span class="object-data-span"><%= suggestion.address%></span></p>
+            </div>
+        <%end%>
+    <%end%>
+    </div>

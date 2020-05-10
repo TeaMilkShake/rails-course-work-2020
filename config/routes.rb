@@ -43,8 +43,7 @@ Rails.application.routes.draw do
 
   #Search posts
 
-  post 'searchPost' => 'search#searchPost'
+  get 'searchPost' => 'search#searchPost'
 
-  post 'remotePrice' => 'suggestions#searchPost'
   resources :suggestions
 end
