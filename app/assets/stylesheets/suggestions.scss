@@ -125,16 +125,25 @@ $ThemeColor3: #13151F;
 
 ////////////////////////////////////////////////////// Search scss
 
+
+.results-title{
+    font-size: calc(16px + 2vmin);
+    font-weight: normal;
+    margin: 100px 0 40px 0;
+}
+
 .search-form-wrapper{
     h1{
-        font-size: calc(24px + 2vmin);
         font-weight: normal;
+    }
+    h1{
+        font-size: calc(24px + 2vmin);
     }
     .range-inputs{
         display: flex;
         justify-content: space-between;
-        .form-input-wrapper{
-            width: 150px;
+        .form-input-wrapper:first-of-type{
+            margin-right: 20px;
         }
     }
     display: flex;
@@ -170,6 +179,18 @@ $ThemeColor3: #13151F;
     }
 }
 
+.from-show-to-profile-btn{
+    transition: background-color 0.2s ease-in-out;
+    background-color: transparent;
+    color:#fff; 
+    font-size: 14px; 
+    border: 1px solid #fff; 
+    border-radius: 5px; 
+    padding: 5px;
+    &:hover{
+        background-color: #fff4;
+    }
+}
 
 
 
@@ -271,5 +292,24 @@ $ThemeColor3: #13151F;
 
     .absolute-suggestion-logo{
         display: none;
+    }
+}
+
+
+
+@media screen and(max-width: 768px){
+    .search-form-wrapper{
+        .range-inputs{
+            flex-direction: column;
+            .form-input-wrapper:first-of-type{
+                margin-right: 0;
+            }
+        }
+        .search-image{
+            display: none;
+        }
+        .search-inputs-wrapper{
+            max-width: 100%;
+        }
     }
 }

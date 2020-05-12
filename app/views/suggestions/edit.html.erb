@@ -18,12 +18,12 @@
                     <div class="form-input-wrapper">
                         <i class="fas fa-dollar-sign form-input-icon"></i>
                         <p class="input-label">Ціна (повна / місяць)</p>
-                        <%= f.text_field :price, class: 'form-input price-input'%>
+                        <%= f.text_field( :price, options = {class: 'form-input price-input',value: @suggestion.priceFloat})%>
                     </div>
                     <div class="form-input-wrapper">
                     <span class="form-input-icon">м²</span>
                         <p class="input-label">Площа</p>
-                        <%= f.text_field :square, class: 'form-input square-input'%>
+                        <%= f.text_field( :square, options = {class: 'form-input square-input',value: @suggestion.squareFloat})%>
                     </div>
 
 

@@ -8,10 +8,29 @@
     <%= form_for :search, url:searchPost_path, :method => 'get', html: {class: 'search-form'} do |f|%>
         <h1>Пошук на Lavi</h1>
         <div class="search-inputs-wrapper">
-            <div class="form-input-wrapper" style="margin-top: 35px">
-                <span class="form-input-icon">м²</span>
-                <p class="input-label">Площа</p>
-                <%= f.text_field :square, class: 'form-input search-input square-input'%>
+            <div class="range-inputs">
+                <div class="form-input-wrapper" style="margin-top: 35px">
+                    <i class="fas fa-dollar-sign form-input-icon"></i>
+                    <p class="input-label">Ціна від</p>
+                    <%= f.text_field :priceFrom, class: 'form-input search-input price-input'%>
+                </div>
+                <div class="form-input-wrapper" style="margin-top: 35px">
+                    <i class="fas fa-dollar-sign form-input-icon"></i>
+                    <p class="input-label">Ціна до</p>
+                    <%= f.text_field :priceTo, class: 'form-input search-input price-input'%>
+                </div>
+            </div>
+            <div class="range-inputs">
+                <div class="form-input-wrapper" style="margin-top: 35px">
+                    <span class="form-input-icon">м²</span>
+                    <p class="input-label">Площа від</p>
+                    <%= f.text_field :squareFrom, class: 'form-input search-input price-input'%>
+                </div>
+                <div class="form-input-wrapper" style="margin-top: 35px">
+                    <span class="form-input-icon">м²</span>
+                    <p class="input-label">Площа до</p>
+                    <%= f.text_field :squareTo, class: 'form-input search-input price-input'%>
+                </div>
             </div>
 
             <div class="form-input-wrapper" style="margin-top: 35px">
@@ -24,13 +43,13 @@
         <div class="checkboxes-wrapper" style="margin-top: 25px">
                         <div class="checkbox-wrapper">
                             <label class="checkbox-label">Оренда
-                                <%= check_box_tag "suggestion[category][]",  "Оренда" ,false, options = {class: 'rent-input checkbox-input category-input'}%>
+                                <%= check_box_tag "search[category][]",  "Оренда" ,false, options = {class: 'rent-input checkbox-input category-input'}%>
                                 <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="checkbox-wrapper">
                             <label class="checkbox-label">Продаж
-                                <%= check_box_tag "suggestion[category][]" , "Продаж" ,false, options = {class: 'sell-input checkbox-input category-input'}%>
+                                <%= check_box_tag "search[category][]" , "Продаж" ,false, options = {class: 'sell-input checkbox-input category-input'}%>
                                 <span class="checkmark"></span>
                             </label>
                         </div>
@@ -41,31 +60,32 @@
         <div class="type-wrapper">
                         <div class="checkbox-wrapper">
                             <label class="checkbox-label">Квартира
-                                <%= check_box_tag "suggestion[flat_type][]",  "Квартира" ,false, options = {class: 'rent-input checkbox-input type-input'}%>
+                                <%= check_box_tag "search[flat_type][]",  "Квартира" ,false, options = {class: 'rent-input checkbox-input type-input'}%>
                                 <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="checkbox-wrapper">
                             <label class="checkbox-label">Будинок
-                                <%= check_box_tag "suggestion[flat_type][]",  "Будинок" ,false, options = {class: 'sell-input checkbox-input type-input'}%>
+                                <%= check_box_tag "search[flat_type][]",  "Будинок" ,false, options = {class: 'sell-input checkbox-input type-input'}%>
                                 <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="checkbox-wrapper">
                             <label class="checkbox-label">Земельна ділянка
-                                <%= check_box_tag "suggestion[flat_type][]",  "Земельна ділянка" ,false, options = {class: 'sell-input checkbox-input type-input'}%>
+                                <%= check_box_tag "search[flat_type][]",  "Земельна ділянка" ,false, options = {class: 'sell-input checkbox-input type-input'}%>
                                 <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="checkbox-wrapper">
                             <label class="checkbox-label">Комерційна нерухомість
-                                <%= check_box_tag "suggestion[flat_type][]",  "Комерційна нерухомість" ,false, options = {class: 'sell-input checkbox-input type-input'}%>
+                                <%= check_box_tag "search[flat_type][]",  "Комерційна нерухомість" ,false, options = {class: 'sell-input checkbox-input type-input'}%>
                                 <span class="checkmark"></span>
                             </label>
                         </div>
         </div> 
         <%= f.submit  "Шукати", :class => 'form-btn search-btn' %>
     <%end%>
+
 
     <div class="search-image">
         <%= image_tag  "landing.jpg" %>
