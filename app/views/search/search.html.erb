@@ -43,13 +43,13 @@
         <div class="checkboxes-wrapper" style="margin-top: 25px">
                         <div class="checkbox-wrapper">
                             <label class="checkbox-label">Оренда
-                                <%= check_box_tag "search[category][]",  "Оренда" ,false, options = {class: 'rent-input checkbox-input category-input'}%>
+                                <%= check_box_tag "search[category][]",  "Оренда" ,false, options = {data: { "input-clicked" => "false" }, class: 'rent-input checkbox-input category-input'}%>
                                 <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="checkbox-wrapper">
                             <label class="checkbox-label">Продаж
-                                <%= check_box_tag "search[category][]" , "Продаж" ,false, options = {class: 'sell-input checkbox-input category-input'}%>
+                                <%= check_box_tag "search[category][]" , "Продаж" ,false, options = {data: { "input-clicked" => "false" }, class: 'sell-input checkbox-input category-input'}%>
                                 <span class="checkmark"></span>
                             </label>
                         </div>

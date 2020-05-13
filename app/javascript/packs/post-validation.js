@@ -3,13 +3,25 @@ document.addEventListener("turbolinks:load", function() {
     //Single checkbox field for type
     $('.type-input').click((e)=>{
         $('.type-input').not(e.target).prop("checked", false)
-        $(e.target).prop("checked", true)
+        if(e.target.data("input-clicked") == "false"){
+            e.target.prop("checked", true)
+            e.target.attr("data-input-clicked", "true")
+        }else{
+            e.target.prop("checked", false)
+            e.target.attr("data-input-clicked", "false")
+        }
     })
 
     //Single checkbox field for category
     $('.category-input').click((e)=>{
         $('.category-input').not(e.target).prop("checked", false)
-        $(e.target).prop("checked", true)
+        if (e.target.data("input-clicked") == "false"){
+            e.target.prop("checked", true)
+            e.target.attr("data-input-clicked", "true")
+        }else{
+            e.target.prop("checked", false)
+            e.target.attr("data-input-clicked", "false")
+        }
     })
 
 
