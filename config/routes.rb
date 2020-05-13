@@ -45,5 +45,10 @@ Rails.application.routes.draw do
 
   get 'searchPost' => 'search#searchPost'
 
+  #Url errors
+  match "/404", :to => "error#error_not_found", :via => :all
+  match "/500", :to => "error#error_rejected_response", :via => :all
+
+
   resources :suggestions
 end
