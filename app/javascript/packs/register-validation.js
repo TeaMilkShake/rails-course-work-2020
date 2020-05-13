@@ -22,7 +22,7 @@ document.addEventListener("turbolinks:load", function() {
     },'Лише літери та пробіл між словами')
 
     $.validator.addMethod('validName',function(value,element){
-        return /^[ҐЄІЇєіїА-Яа-яA-Za-z" "]*$/.test(value)
+        return /^[\'ҐЄІЇєіїА-Яа-яA-Za-z" "]*$/.test(value)
     },'Лише літери та пробіл між словами')
 
 

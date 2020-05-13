@@ -1,6 +1,10 @@
 $ThemeColor1: #1C2341;
 $ThemeColor3: #13151F;
 
+.footer-wrapper-wrapper{
+    position: relative;
+}
+
 .footer{
     position: relative;
     z-index: 2;
@@ -8,6 +12,7 @@ $ThemeColor3: #13151F;
 }
 
 .footer-wrapper{
+    margin-top: 20px;
     position: relative;
     overflow: hidden;
     color: #fff;

@@ -38,7 +38,7 @@ document.addEventListener("turbolinks:load", function() {
 
     //Address validation
     $.validator.addMethod('addressValidation',function(value,element){
-        return /^[0-9ҐЄІЇєіїА-Яа-яA-Za-z\.\-" "]*$/.test(value)
+        return /^[\/0-9ҐЄІЇєіїА-Яа-яA-Za-z\.\-" "]*$/.test(value)
     },"Тільки літери на цифри")
 
         //Address validation

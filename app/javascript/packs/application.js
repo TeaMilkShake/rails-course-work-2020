@@ -11,10 +11,15 @@ require("channels")
 require("jquery");
 import 'imports-loader?define=>false,module.exports=>false!jquery-validation';
 
+
+//Show password
+require("packs/password-show")
+
+
 //Validation
 require("packs/register-validation")
 require("packs/login-validation")
-require("packs/post-validation")
+require("packs/suggestion-validation")
 
 //Search
 require("packs/search-validation")

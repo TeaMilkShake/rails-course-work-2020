@@ -46,6 +46,9 @@ $ThemeColor3: #13151F;
  .container{
      margin: 0 10vmin;
  }
+ label::selection, .input-label::selection{
+     background: transparent !important;
+ }
  .title{
      text-align: center;
  }
@@ -250,7 +253,16 @@ input[type=number] {
         left: 5px;
     }
 }
-
+.eye-icon{
+    cursor: pointer !important;
+    top: 17px !important;
+    right: 0 !important;
+    padding: 10px;
+}
+.opened-eye-icon{
+    display: none;
+    right: 1px !important;
+}
 
                                             //Warning wrapper
 .warning-wrapper{

@@ -24,9 +24,11 @@
 
         <div class="form-input-wrapper">
             <p class="input-label">Номер телефона</p>
-            <%= f.number_field :number, class: 'form-input phone-number-input'%>
+            <%= f.number_field :number, options = {class: 'form-input phone-number-input'}%>
         </div>
         <div class="form-input-wrapper">
+            <i class="form-input-icon fas fa-eye-slash closed-eye-icon eye-icon"></i>
+            <i class="form-input-icon fas fa-eye opened-eye-icon eye-icon"></i>
             <p class="input-label">Пароль</p>
             <%= f.password_field(:password, {:class => 'form-input login-password', :id => 'password-confirm'}) %>
             
