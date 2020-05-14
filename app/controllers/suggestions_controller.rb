@@ -60,6 +60,10 @@ class SuggestionsController < ApplicationController
 
     params[:suggestion][:price] = params[:suggestion][:price] << " $" 
     params[:suggestion][:square] = params[:suggestion][:square] << " м²" 
+
+    params[:suggestion][:price] = params[:suggestion][:price].gsub(/\B(?=(\d{3})+(?!\d))/, " ")
+    params[:suggestion][:square] = params[:suggestion][:square].gsub(/\B(?=(\d{3})+(?!\d))/, " ")
+
       if @suggestion.update(suggestion_params)
           redirect_to @suggestion
       end
