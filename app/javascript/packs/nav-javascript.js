@@ -1,4 +1,4 @@
-document.addEventListener("turbolinks:load", function() {
+$(document).ready(()=>{
     
      //Menu button
      $('.burger-btn').click(function(){

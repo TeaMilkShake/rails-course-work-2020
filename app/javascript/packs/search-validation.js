@@ -1,4 +1,4 @@
-document.addEventListener("turbolinks:load", function() {
+$(document).ready(()=>{
     $('.search-form').validate({
         rules: {
             "search[priceFrom]": {

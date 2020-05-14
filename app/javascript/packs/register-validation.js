@@ -1,4 +1,4 @@
-document.addEventListener("turbolinks:load", function() {
+$(document).ready(()=>{
 
     // (first three numbers) validation
     var phone_num = $('.phone-number-input')

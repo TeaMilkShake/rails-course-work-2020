@@ -1,4 +1,4 @@
-document.addEventListener("turbolinks:load", function() {
+$(document).ready(()=>{
     $('#suggestion-carousel').owlCarousel({
         items: 2,
         loop: true,

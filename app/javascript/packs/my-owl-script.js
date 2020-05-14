@@ -1,10 +1,10 @@
-document.addEventListener("turbolinks:load", function() {
+$(document).ready(()=>{
     $('#Suggestions-wrapper').owlCarousel({
-        items:3,
         loop:true,
         center:true,
         margin: 50,
         dots:true,
+        responsiveClass: true,
         responsive: {
             0:{
                 items: 1,

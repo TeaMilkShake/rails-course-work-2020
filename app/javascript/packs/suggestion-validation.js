@@ -1,4 +1,4 @@
-document.addEventListener("turbolinks:load", function() {
+$(document).ready(()=>{
 
     //Single checkbox field for type
     $('.type-input').click((e)=>{
@@ -152,7 +152,7 @@ document.addEventListener("turbolinks:load", function() {
             },
             "suggestion[price]": {
                 required: true,
-                maxlength: 12
+                maxlength: 13
             },
             "suggestion[square]": {
                 required: true,

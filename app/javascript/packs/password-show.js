@@ -1,4 +1,4 @@
-document.addEventListener("turbolinks:load", function() {
+$(document).ready(()=>{
     $('.closed-eye-icon').click(function(){
         $(this).css('display', 'none')
         $(this).parent().find('.opened-eye-icon').css('display', 'block')

@@ -1,4 +1,4 @@
-document.addEventListener("turbolinks:load", function() {
+$(document).ready(()=>{
   
     // If we are on edit page, set image opacity from 0 to 1 and remove edit-file class
     function editImageCheck(image){

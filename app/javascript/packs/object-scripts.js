@@ -1,4 +1,4 @@
-document.addEventListener("turbolinks:load", function() {
+$(document).ready(()=>{
     $('.suggestion-delete-btn').click(()=>{
         $('.warning-wrapper').css({
             'visibility': 'visible'
