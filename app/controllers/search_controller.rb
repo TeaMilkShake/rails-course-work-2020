@@ -20,6 +20,13 @@ class SearchController < ApplicationController
         
         @suggestions = Suggestion.all
         suggestin_length = @suggestions.size()
+
+        @priceFrom = params[:search][:priceFrom]
+        @priceTo = params[:search][:priceTo]
+
+        @squareFrom = params[:search][:squareFrom]
+        @squareTo = params[:search][:squareTo]
+
         @suggestions = @suggestions.where("priceFloat > ?", params[:search][:priceFrom].gsub(/\s+/, "").to_f) if params[:search][:priceFrom].present?
         @suggestions = @suggestions.where("priceFloat < ?", params[:search][:priceTo].gsub(/\s+/, "").to_f) if params[:search][:priceTo].present?
         @suggestions = @suggestions.where("squareFloat > ?", params[:search][:squareFrom].gsub(/\s+/, "").to_f) if params[:search][:squareFrom].present?

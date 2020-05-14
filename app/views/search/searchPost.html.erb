@@ -12,24 +12,24 @@
                 <div class="form-input-wrapper" style="margin-top: 35px">
                     <i class="fas fa-dollar-sign form-input-icon"></i>
                     <p class="input-label">Ціна від</p>
-                    <%= f.text_field :priceFrom, class: 'form-input search-input price-input'%>
+                    <%= f.text_field :priceFrom, class: 'form-input search-input price-input', value: @priceFrom%>
                 </div>
                 <div class="form-input-wrapper" style="margin-top: 35px">
                     <i class="fas fa-dollar-sign form-input-icon"></i>
                     <p class="input-label">Ціна до</p>
-                    <%= f.text_field :priceTo, class: 'form-input search-input price-input'%>
+                    <%= f.text_field :priceTo, class: 'form-input search-input price-input', value: @priceTo%>
                 </div>
             </div>
             <div class="range-inputs">
                 <div class="form-input-wrapper" style="margin-top: 35px">
                     <span class="form-input-icon">м²</span>
                     <p class="input-label">Площа від</p>
-                    <%= f.text_field :squareFrom, class: 'form-input search-input price-input'%>
+                    <%= f.text_field :squareFrom, class: 'form-input search-input price-input', value: @squareFrom%>
                 </div>
                 <div class="form-input-wrapper" style="margin-top: 35px">
                     <span class="form-input-icon">м²</span>
                     <p class="input-label">Площа до</p>
-                    <%= f.text_field :squareTo, class: 'form-input search-input price-input'%>
+                    <%= f.text_field :squareTo, class: 'form-input search-input price-input', value: @squareTo%>
                 </div>
             </div>
 
