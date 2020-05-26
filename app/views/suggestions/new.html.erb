@@ -4,7 +4,7 @@
     <h1>Нова пропозиція</h1>
 </div>
 <div class="container">
-    <%= form_for :suggestion , url:newPost_path, html:{id: 'new-post-form'} do |f| %>
+    <%= form_for :suggestion , url:newPost_path, html:{id: 'new-post-form', autocomplete: 'off'} do |f| %>
 
         
         <div class="post-text-info">
@@ -88,6 +88,7 @@
         <h1 class="post-photo-title">Фото</h1>
         <div class="post-files-upload">
             <div class="post-file">
+                <p class="delete-image">Видалити</p>
                 <%= image_tag("" , :class => "post-image-1")%>
                 <div class="post-file-new-darken">
                     <h2>Нове фото</h2>
@@ -104,6 +105,7 @@
                 <%= f.file_field :image1, class: "post-image-input-1"%>
             </div>
             <div class="post-file">
+                <p class="delete-image">Видалити</p>
                 <%= image_tag("" , :class => "post-image-2")%>
                 <div class="post-file-new-darken">
                     <h2>Нове фото</h2>
@@ -120,13 +122,14 @@
                 <%= f.file_field :image2%>
             </div>
             <div class="post-file">
+                <p class="delete-image">Видалити</p>
                 <%= image_tag("" , :class => "post-image-3")%>
                 <div class="post-file-new-darken">
                     <h2>Нове фото</h2>
                     <i class="fas fa-image"></i>
                 </div>
 
-               <div class="post-image-add-text">
+                <div class="post-image-add-text">
                     <h2>Додати фото</h2>
                     <i class="fas fa-image"></i>
                 </div>

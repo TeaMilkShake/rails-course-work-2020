@@ -19,12 +19,12 @@ $(document).ready(()=>{
 
     $.validator.addMethod('validPassword',function(value,element){
         return /^[a-zA-Z0-9_" "]*$/.test(value)
-    },'Лише літери та пробіл між словами')
-
+    },'Лише латиниця та нижнє підкреслюваня')
+    
     $.validator.addMethod('validName',function(value,element){
         return /^[\'ҐЄІЇєіїА-Яа-яA-Za-z" "]*$/.test(value)
     },'Лише літери та пробіл між словами')
-
+        
 
 
     $.validator.setDefaults({
@@ -48,6 +48,7 @@ $(document).ready(()=>{
             "human[email]": {
                 required: true,
                 email: true,
+                maxlength: 40,
                 remote:{
                     url: 'validate',
                     type: 'post'
@@ -56,6 +57,7 @@ $(document).ready(()=>{
             "human[number]": {
                 required: true,
                 phone:true,
+                maxlength: 40,
                 remote:{
                     url: 'phone',
                     type: 'post'
@@ -64,10 +66,12 @@ $(document).ready(()=>{
             "human[password]":{
                 required: true,
                 validPassword: true,
-                minlength: 6
+                minlength: 6,
+                maxlength: 40
             },
             "human[password_confirmation]":{
                 required: true,
+                maxlength: 40,
                 equalTo: '#password-confirm'
             }
         },
@@ -79,19 +83,23 @@ $(document).ready(()=>{
             "human[email]": {
                 required: "Це поле обов'язкове",
                 email: "Неякісна пошта",
-                remote: "Ця пошта вже зареєстрована"
+                remote: "Ця пошта вже зареєстрована",
+                maxlength: "В межах 40 символів"
             },
             "human[number]": {
                 required: "Це поле обов'язкове",
-                remote: "Цей номер вже зареєстрований"
+                remote: "Цей номер вже зареєстрований",
+                maxlength: "В межах 40 символів",
             },
             "human[password]":{
                 required: "Це поле обов'язкове",
-                minlength: "Мінімум 6 символів"
+                minlength: "Мінімум 6 символів",
+                maxlength: "В межах 40 символів",
             },
             "human[password_confirmation]":{
                 required: "Це поле обов'язкове",
-                equalTo: 'Паролі мають співпадати'
+                equalTo: 'Паролі мають співпадати',
+                maxlength: "В межах 40 символів",
             } 
         }
     })    

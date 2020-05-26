@@ -12,7 +12,7 @@ $(document).ready(()=>{
         })
     })
 
-    $('.warning-back').click(()=>{
+    $('.suggestion-edit-btn').click(()=>{
 
         $('.warning-darken').css({
                 'opacity': '0'   

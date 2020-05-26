@@ -27,6 +27,7 @@ $(document).ready(()=>{
             "humanLogin[number]": {
                 required: true,
                 phone:true,
+                maxlength: 40,
                 remote:{
                     url: 'loginPhone',
                     type: 'post'
@@ -35,17 +36,19 @@ $(document).ready(()=>{
             "humanLogin[password]":{
                 required: true,
                 minlength: 6,
- 
+                maxlength: 40,
             },
         },
         messages: {
             "humanLogin[number]": {
                 required: "Це поле обов'язкове",
-                remote: "Номер не зареєстрований"
+                remote: "Номер не зареєстрований",
+                maxlength: "В межах 40 символів",
             },
             "humanLogin[password]":{
                 required: "Це поле обов'язкове",
                 minlength: "Мінімум 6 символів",
+                maxlength: "В межах 40 символів",
             }
         }
     })    

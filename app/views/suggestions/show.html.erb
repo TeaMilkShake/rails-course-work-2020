@@ -5,7 +5,7 @@
               <div class="warning-card">
                 <h1>Ця дія безповоротна</h1>
                 <div class="warning-buttons">
-                  <p class="warning-back no-select-btn">Повернутися</p>
+                  <p class="suggestion-edit-btn no-select-btn">Повернутися</p>
                   <%= link_to 'Видалити', suggestion_path(@suggestion), method: :delete, :class => "suggestion-delete-btn"%>
                 </div>
               </div>
@@ -58,7 +58,7 @@
         <% if session[:user_id] && session[:user_id] == @suggestion.owner.to_i%>
 
         <h1 class="actions-title">Додаткові дії</h1>
-        <%= link_to "Редагувати", edit_suggestion_path(@suggestion)%>
+        <%= link_to "Редагувати", edit_suggestion_path(@suggestion), {:class => 'suggestion-edit-btn'} %>
         <p class="suggestion-delete-btn">Видалити</p>
 
         <%end%>

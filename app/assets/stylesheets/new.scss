@@ -80,6 +80,18 @@ $ThemeColor3: #13151F;
     height: 250px;
     color: #c4c4c4;
     position: relative;
+    .delete-image{
+        display: none;
+        position: absolute;
+        bottom: -32px;
+        border-radius: 4px;
+        font-size: 12px;
+        right: 0;
+        color: #fff;
+        background-color: red;
+        padding: 5px;
+        cursor: pointer;
+    }
     .error{
         position: absolute;
         display: block;

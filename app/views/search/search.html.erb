@@ -5,7 +5,7 @@
 </div>
 
 <div class="search-form-wrapper">
-    <%= form_for :search, url:searchPost_path, :method => 'get', html: {class: 'search-form'} do |f|%>
+    <%= form_for :search, url:searchPost_path, :method => 'get', html: {class: 'search-form', autocomplete: 'off'} do |f|%>
         <h1>Пошук на Lavi</h1>
         <div class="search-inputs-wrapper">
             <div class="range-inputs">

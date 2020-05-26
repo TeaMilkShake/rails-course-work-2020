@@ -20,7 +20,7 @@
 
     <!---------------------------------------------------------------------------------------------Form-->
 
-    <%= form_for :humanLogin , url:loginSubmit_path, html:{id: 'login-form'} do |f| %>
+    <%= form_for :humanLogin , url:loginSubmit_path, html:{id: 'login-form', autocomplete: 'off'} do |f| %>
 
         <div class="form-input-wrapper">
             <p class="input-label">Номер телефона</p>

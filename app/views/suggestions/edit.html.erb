@@ -4,7 +4,7 @@
     <h1>Редагування</h1>
 </div>
 
-<%= form_for :suggestion, url: suggestion_path(@suggestion), method: :patch, html:{class: 'container', id: 'new-post-form'} do |f|%>
+<%= form_for :suggestion, url: suggestion_path(@suggestion), method: :patch, html:{class: 'container', id: 'new-post-form', autocomplete: 'off'} do |f|%>
   <div class="post-text-info">
             <div class="post-description">
                 <h2>Опис</h2>

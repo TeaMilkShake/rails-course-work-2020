@@ -8,7 +8,7 @@
 
     <h1>Сторінка реєстрації</h1>
 
-    <%= form_for :human , url:registerSubmit_path, html:{id: 'register-form'} do |f| %>
+    <%= form_for :human , url:registerSubmit_path, html:{id: 'register-form', autocomplete: 'off'} do |f| %>
         <div class="form-input-wrapper">
             <p class="input-label">П. І. Б.</p>
             <%= f.text_field(:name, {:class => 'form-input', :placeholder => "Яновський Нікіта Юрійович"}) %>
